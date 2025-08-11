@@ -4,112 +4,322 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Círculo Perinatal | Psicología perinatal</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS CDN for rapid design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Montserrat font for a modern, friendly feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
 </head>
-<body>
-    <header class="header">
-        <div class="container header-wrapper">
-            <a href="#" class="logo-link">
-                <img src="Logo.png" alt="Círculo Perinatal" class="logo">
+<body class="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-slate-800">
+    <!-- Encabezado -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-rose-100/60">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo y nombre -->
+            <a href="#inicio" class="flex items-center gap-3">
+                <img src="Logo.png" alt="Logo Círculo Perinatal" class="h-9 w-9 rounded-full ring-4 ring-rose-100">
+                <div class="font-semibold tracking-tight">
+                    <span class="text-rose-700">Círculo</span> <span class="text-slate-700">Perinatal</span>
+                </div>
             </a>
-            <nav class="nav">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#porque">¿Por qué?</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#atiende">Qué atendemos</a>
-                <a href="#contacto">Contacto</a>
+            <!-- Navegación para pantallas grandes -->
+            <nav class="hidden md:flex items-center gap-8 text-sm">
+                <a href="#servicios" class="hover:text-rose-600">Servicios</a>
+                <a href="#equipo" class="hover:text-rose-600">Equipo</a>
+                <a href="#testimonios" class="hover:text-rose-600">Testimonios</a>
+                <a href="#preguntas" class="hover:text-rose-600">Preguntas</a>
+                <a href="#contacto" class="hover:text-rose-600">Contacto</a>
             </nav>
+            <!-- Acciones rápidas -->
+            <div class="flex items-center gap-3">
+                <a href="mailto:info@circuloperinatal.com?subject=Reserva%20de%20evaluación" class="hidden sm:inline-flex items-center rounded-xl border border-rose-200 px-4 py-2 text-sm font-medium hover:bg-rose-50">Escríbenos</a>
+                <a href="#contacto" class="inline-flex items-center rounded-xl bg-rose-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700">Reserva</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
-                <h1>Bienvenidos a Círculo&nbsp;Perinatal</h1>
-                <p>Un espacio seguro y cálido para acompañarte durante el embarazo, parto y posparto.</p>
-            </div>
-        </section>
-
-        <!-- Nosotros Section -->
-        <section id="nosotros" class="section">
-            <div class="container">
-                <h2>Nosotros</h2>
-                <p>
-                    Círculo&nbsp;Perinatal es un proyecto de psicólogas perinatales comprometidas
-                    con el bienestar emocional de las familias. Nuestro enfoque es cercano,
-                    humano y basado en la evidencia. Creemos que cada embarazo y cada
-                    nacimiento son únicos, y por ello ofrecemos un acompañamiento personalizado
-                    que entiende las necesidades físicas y emocionales de esta etapa vital.
+    <!-- Hero -->
+    <section id="inicio" class="relative overflow-hidden">
+        <!-- Fondo decorativo -->
+        <div class="absolute inset-0 -z-10 opacity-20" aria-hidden>
+            <svg class="absolute -top-20 -right-24 w-[40rem]" viewBox="0 0 800 800" fill="none">
+                <defs>
+                    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#fb7185" />
+                        <stop offset="100%" stop-color="#fda4af" />
+                    </linearGradient>
+                </defs>
+                <circle cx="400" cy="400" r="300" fill="url(#g)" />
+            </svg>
+        </div>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                    Acompañamiento psicológico perinatal <span class="text-rose-600">cálido y basado en evidencia</span>
+                </h1>
+                <p class="mt-5 text-base sm:text-lg text-slate-600 max-w-xl">
+                    Te sostenemos antes, durante y después del nacimiento. Ansiedad, depresión perinatal, duelo gestacional y
+                    crianza temprana con un enfoque humano, culturalmente sensible y con herramientas prácticas para el día a día.
                 </p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#contacto" class="inline-flex items-center rounded-xl bg-rose-600 px-5 py-3 text-white font-semibold shadow hover:bg-rose-700">Agendar evaluación gratuita</a>
+                    <a href="#servicios" class="inline-flex items-center rounded-xl px-5 py-3 border border-slate-200 font-semibold hover:bg-slate-50">Ver servicios</a>
+                </div>
+                <div class="mt-6 flex items-center gap-4 text-xs text-slate-500">
+                    <div class="flex items-center gap-1">
+                        <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
+                        Atención online y presencial
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <span class="inline-block h-2 w-2 rounded-full bg-rose-500"></span>
+                        Sydney · Australia · Global
+                    </div>
+                </div>
             </div>
-        </section>
-
-        <!-- ¿Por qué? Section -->
-        <section id="porque" class="section section-alt">
-            <div class="container">
-                <h2>¿Por qué este centro?</h2>
-                <p>
-                    La etapa perinatal abarca uno de los periodos más transformadores
-                    en la vida de una persona. En Círculo&nbsp;Perinatal buscamos brindar un
-                    sostén integral durante el embarazo y el posparto, ayudando a prevenir
-                    y afrontar dificultades como la ansiedad, la depresión posparto y
-                    los procesos de duelo. Nuestra misión es promover el vínculo sano
-                    entre madres, padres y sus bebés desde el amor y la empatía.
-                </p>
+            <div class="relative">
+                <div class="relative mx-auto max-w-md rounded-3xl border border-rose-100 bg-white p-4 shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1600&auto=format&fit=crop" alt="Madre con bebé en brazos, calma y contención" class="rounded-2xl object-cover aspect-[4/3]">
+                    <div class="mt-4 grid grid-cols-3 gap-3 text-center text-xs">
+                        <div class="rounded-xl bg-rose-50 border border-rose-100 p-3">
+                            <div class="font-semibold text-rose-700">Atención 24-48h</div>
+                            <div class="text-slate-600">Primera cita</div>
+                        </div>
+                        <div class="rounded-xl bg-rose-50 border border-rose-100 p-3">
+                            <div class="font-semibold text-rose-700">Psicólogos</div>
+                            <div class="text-slate-600">Perinatales</div>
+                        </div>
+                        <div class="rounded-xl bg-rose-50 border border-rose-100 p-3">
+                            <div class="font-semibold text-rose-700">Confidencial</div>
+                            <div class="text-slate-600">&amp; seguro</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Servicios Section -->
-        <section id="servicios" class="section">
-            <div class="container">
-                <h2>Servicios</h2>
-                <ul class="services-list">
-                    <li>Acompañamiento psicológico durante el embarazo y posparto</li>
-                    <li>Terapia individual y de pareja para transitar la maternidad y paternidad</li>
-                    <li>Grupos de apoyo y talleres psicoeducativos</li>
-                    <li>Orientación y capacitación para profesionales de la salud</li>
-                </ul>
+    <!-- Servicios -->
+    <section id="servicios" class="py-16 sm:py-24 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Servicios</h2>
+            <p class="mt-2 text-slate-600 max-w-2xl">Intervenciones centradas en la etapa perinatal y la primera infancia.</p>
+            <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Psicoterapia perinatal</h3>
+                    <p class="mt-2 text-sm text-slate-600">Ansiedad y depresión perinatal, duelo gestacional, trauma obstétrico, adaptación a la maternidad/paternidad.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Acompañamiento posparto</h3>
+                    <p class="mt-2 text-sm text-slate-600">Contención emocional, lactancia y sueño, vínculo temprano y autocuidado realista para el día a día.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Pareja y familia</h3>
+                    <p class="mt-2 text-sm text-slate-600">Comunicación efectiva, corresponsabilidad, límites y construcción de redes de apoyo.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Preparación al nacimiento</h3>
+                    <p class="mt-2 text-sm text-slate-600">Psicoeducación basada en evidencia, plan de parto, manejo del miedo y expectativas realistas.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Grupos terapéuticos</h3>
+                    <p class="mt-2 text-sm text-slate-600">Espacios de apoyo entre pares guiados por especialistas. Modalidad online y presencial.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 p-6 hover:shadow-md bg-white">
+                    <h3 class="font-semibold text-slate-900">Derivaciones confiables</h3>
+                    <p class="mt-2 text-sm text-slate-600">Red de obstetras, pediatras, doulas y psiquiatría perinatal cuando el caso lo requiere.</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Qué atendemos Section -->
-        <section id="atiende" class="section section-alt">
-            <div class="container">
-                <h2>¿Qué atendemos?</h2>
-                <ul class="services-list">
-                    <li>Depresión posparto y trastornos del estado de ánimo</li>
-                    <li>Ansiedad prenatal y miedo al parto</li>
-                    <li>Procesos de duelo perinatal y pérdidas gestacionales</li>
-                    <li>Dificultades de vinculación temprana con el bebé</li>
-                    <li>Asesoramiento en lactancia y vínculo afectivo</li>
-                </ul>
+    <!-- Equipo -->
+    <section id="equipo" class="py-16 sm:py-24 bg-rose-50/50">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Nuestro equipo</h2>
+            <p class="mt-2 text-slate-600 max-w-2xl">Psicología perinatal con corazón latino y estándares internacionales.</p>
+            <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <article class="rounded-2xl border border-rose-100 bg-white p-4 hover:shadow-md">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop" alt="Dra. Laura Reyes" class="h-56 w-full object-cover rounded-xl">
+                    <div class="p-3">
+                        <h3 class="font-semibold text-slate-900">Dra. Laura Reyes</h3>
+                        <p class="text-sm text-slate-600">Psicóloga Perinatal · Directora Clínica</p>
+                    </div>
+                </article>
+                <article class="rounded-2xl border border-rose-100 bg-white p-4 hover:shadow-md">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop" alt="Mg. Daniela Soto" class="h-56 w-full object-cover rounded-xl">
+                    <div class="p-3">
+                        <h3 class="font-semibold text-slate-900">Mg. Daniela Soto</h3>
+                        <p class="text-sm text-slate-600">Psicoterapeuta · Duelo gestacional</p>
+                    </div>
+                </article>
+                <article class="rounded-2xl border border-rose-100 bg-white p-4 hover:shadow-md">
+                    <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1600&auto=format&fit=crop" alt="Lic. Marcos Vela" class="h-56 w-full object-cover rounded-xl">
+                    <div class="p-3">
+                        <h3 class="font-semibold text-slate-900">Lic. Marcos Vela</h3>
+                        <p class="text-sm text-slate-600">Psicólogo · Pareja y paternidad</p>
+                    </div>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contacto Section -->
-        <section id="contacto" class="section">
-            <div class="container">
-                <h2>Contacto</h2>
-                <p>
-                    Si deseas obtener más información o reservar una cita, puedes
-                    ponerte en contacto con nosotras a través de los siguientes medios:
-                </p>
-                <ul class="contact-list">
-                    <li><strong>Email:</strong> <a href="mailto:info@circuloperinatal.com">info@circuloperinatal.com</a></li>
-                    <li><strong>Teléfono:</strong> +61 4 1234 5678</li>
-                    <li><strong>Dirección:</strong> Av. del Bienestar 123, Sydney NSW</li>
-                </ul>
+    <!-- Testimonios -->
+    <section id="testimonios" class="py-16 sm:py-24 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Testimonios</h2>
+            <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <blockquote class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-rose-50 p-6">
+                    <p class="text-slate-700">“Encontré herramientas simples para mi ansiedad posparto y un espacio donde pude llorar sin culpa.”</p>
+                    <footer class="mt-4 text-sm font-medium text-slate-500">— María, 31</footer>
+                </blockquote>
+                <blockquote class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-rose-50 p-6">
+                    <p class="text-slate-700">“Nos ayudaron a organizarnos como pareja. Dormimos mejor y discutimos menos.”</p>
+                    <footer class="mt-4 text-sm font-medium text-slate-500">— Carlos y Ana, 34</footer>
+                </blockquote>
+                <blockquote class="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-rose-50 p-6">
+                    <p class="text-slate-700">“El grupo de duelo fue un abrazo colectivo. No me sentí sola.”</p>
+                    <footer class="mt-4 text-sm font-medium text-slate-500">— Lucía, 29</footer>
+                </blockquote>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 Círculo&nbsp;Perinatal. Todos los derechos reservados.</p>
+    <!-- Preguntas frecuentes -->
+    <section id="preguntas" class="py-16 sm:py-24 bg-rose-50/50">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Preguntas frecuentes</h2>
+            <div class="mt-8 divide-y divide-rose-100 rounded-2xl border border-rose-100 bg-white">
+                <!-- Pregunta 1 -->
+                <details class="group open:bg-rose-50/40 px-6 py-5">
+                    <summary class="flex cursor-pointer items-center justify-between text-slate-800 font-medium">
+                        ¿Atienden online?
+                        <span class="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full border border-rose-200 bg-white text-rose-600 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-3 text-sm text-slate-600">Sí. Contamos con sesiones por videollamada seguras y flexibles, además de atención presencial en Sydney.</p>
+                </details>
+                <!-- Pregunta 2 -->
+                <details class="group open:bg-rose-50/40 px-6 py-5">
+                    <summary class="flex cursor-pointer items-center justify-between text-slate-800 font-medium">
+                        ¿Ofrecen primera evaluación gratuita?
+                        <span class="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full border border-rose-200 bg-white text-rose-600 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-3 text-sm text-slate-600">Sí. Ofrecemos una llamada de 15 minutos para orientar el caso y proponer el primer paso terapéutico.</p>
+                </details>
+                <!-- Pregunta 3 -->
+                <details class="group open:bg-rose-50/40 px-6 py-5">
+                    <summary class="flex cursor-pointer items-center justify-between text-slate-800 font-medium">
+                        ¿Trabajan con seguros?
+                        <span class="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full border border-rose-200 bg-white text-rose-600 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-3 text-sm text-slate-600">Emitimos boletas/facturas para reembolso según póliza. Consulte con su aseguradora.</p>
+                </details>
+                <!-- Pregunta 4 -->
+                <details class="group open:bg-rose-50/40 px-6 py-5">
+                    <summary class="flex cursor-pointer items-center justify-between text-slate-800 font-medium">
+                        ¿Pueden derivar a psiquiatría perinatal?
+                        <span class="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full border border-rose-200 bg-white text-rose-600 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-3 text-sm text-slate-600">Cuando corresponde, coordinamos con especialistas de confianza para un abordaje integral.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de reserva y CTA -->
+    <section id="reserva" class="py-16 sm:py-24 bg-white">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Demos el primer paso juntas/os</h3>
+            <p class="mt-2 text-slate-600">Agenda una evaluación gratuita de 15 minutos para conocer tu situación y sugerirte el mejor plan.</p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <a href="https://wa.me/61400000000?text=Hola%20C%C3%ADrculo%20Perinatal%2C%20quisiera%20agendar%20una%20evaluaci%C3%B3n%20gratuita" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-xl bg-emerald-600 px-5 py-3 text-white font-semibold shadow hover:bg-emerald-700">WhatsApp</a>
+                <a href="mailto:info@circuloperinatal.com?subject=Evaluaci%C3%B3n%20gratuita" class="inline-flex items-center rounded-xl px-5 py-3 border border-slate-200 font-semibold hover:bg-slate-50">Correo</a>
+                <a href="#contacto" class="inline-flex items-center rounded-xl px-5 py-3 border border-rose-200 font-semibold text-rose-700 hover:bg-rose-50">Formulario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto" class="py-16 sm:py-24 bg-rose-50/50">
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-rose-100 bg-white p-6 sm:p-10">
+                <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Contáctanos</h3>
+                <p class="mt-2 text-slate-600">Déjanos tus datos y te escribiremos dentro de 24-48 horas.</p>
+                <form action="#" class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <label class="text-sm">
+                        Nombre
+                        <input type="text" required class="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-rose-300">
+                    </label>
+                    <label class="text-sm">
+                        Email
+                        <input type="email" required class="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-rose-300">
+                    </label>
+                    <label class="text-sm sm:col-span-2">
+                        Tema de consulta
+                        <select class="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-rose-300">
+                            <option>Evaluación gratuita</option>
+                            <option>Psicoterapia perinatal</option>
+                            <option>Pareja y familia</option>
+                            <option>Grupos terapéuticos</option>
+                            <option>Otro</option>
+                        </select>
+                    </label>
+                    <label class="text-sm sm:col-span-2">
+                        Mensaje
+                        <textarea rows="4" class="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-rose-300" placeholder="Cuéntanos brevemente tu situación"></textarea>
+                    </label>
+                    <div class="sm:col-span-2 flex items-center justify-between">
+                        <p class="text-xs text-slate-500">Al enviar aceptas nuestra política de privacidad.</p>
+                        <button type="submit" class="inline-flex items-center rounded-xl bg-rose-600 px-5 py-2.5 text-white font-semibold shadow hover:bg-rose-700">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="border-t border-rose-100 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div class="h-8 w-8 rounded-full bg-rose-200 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                                <path d="M12 3c4.418 0 8 3.582 8 8 0 5-8 10-8 10S4 16 4 11c0-4.418 3.582-8 8-8Z" class="fill-rose-500" />
+                            </svg>
+                        </div>
+                        <span class="font-semibold">Círculo Perinatal</span>
+                    </div>
+                    <p class="mt-3 text-sm text-slate-600 max-w-xs">Salud mental perinatal cálida, accesible y basada en evidencia.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900">Centro</h4>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="#servicios" class="hover:text-rose-700">Servicios</a></li>
+                        <li><a href="#equipo" class="hover:text-rose-700">Equipo</a></li>
+                        <li><a href="#preguntas" class="hover:text-rose-700">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900">Contacto</h4>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="mailto:info@circuloperinatal.com" class="hover:text-rose-700">info@circuloperinatal.com</a></li>
+                        <li><a href="https://wa.me/61400000000" target="_blank" rel="noreferrer" class="hover:text-rose-700">WhatsApp</a></li>
+                        <li>Sydney, Australia</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-slate-900">Legal</h4>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-rose-700">Política de privacidad</a></li>
+                        <li><a href="#" class="hover:text-rose-700">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-rose-100 pt-6 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between">
+                <p>© 2025 Círculo Perinatal. Todos los derechos reservados.</p>
+                <p>Hecho con cariño en Australia.</p>
+            </div>
         </div>
     </footer>
 </body>
