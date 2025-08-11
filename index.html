@@ -10,6 +10,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; }
+
+        /* Custom color palette derived from the logo
+           We override Tailwind's default rose colors to use the logo's warm browns and beige. */
+        :root {
+            --color-dark-brown: #603813; /* deep brown similar to the logo's lines */
+            --color-medium-brown: #8b5e3c; /* medium brown for hover states and borders */
+            --color-light-beige: #f5ede5; /* soft beige for backgrounds */
+        }
+        /* Override Tailwind rose palette classes with our custom palette */
+        .text-rose-600 { color: var(--color-dark-brown) !important; }
+        .text-rose-700 { color: var(--color-dark-brown) !important; }
+        .bg-rose-600 { background-color: var(--color-dark-brown) !important; }
+        .hover\:bg-rose-700:hover { background-color: var(--color-medium-brown) !important; }
+        .border-rose-200 { border-color: var(--color-medium-brown) !important; }
+        .border-rose-100 { border-color: var(--color-medium-brown) !important; }
+        .bg-rose-50 { background-color: var(--color-light-beige) !important; }
+        .bg-rose-50\/50 { background-color: var(--color-light-beige) !important; }
+        .from-rose-50 { --tw-gradient-from: var(--color-light-beige) !important; --tw-gradient-to: rgb(255 255 255 / 0) !important; }
+        .to-rose-50 { --tw-gradient-to: var(--color-light-beige) !important; }
+        .via-white { --tw-gradient-stops: var(--color-light-beige), #ffffff, var(--color-light-beige); }
+        /* Override ring and badge colors */
+        .ring-rose-100 { --tw-ring-color: var(--color-medium-brown) !important; }
+        .bg-rose-200 { background-color: var(--color-medium-brown) !important; }
+        .bg-rose-100 { background-color: var(--color-light-beige) !important; }
+        .text-rose-500 { color: var(--color-dark-brown) !important; }
+        .text-rose-600 { color: var(--color-dark-brown) !important; }
+
     </style>
 </head>
 <body class="min-h-screen bg-gradient-to-b from-rose-50 via-white to-rose-50 text-slate-800">
