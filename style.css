@@ -1,0 +1,139 @@
+/* Theme colors derived from the logo: warm browns and soft beige */
+:root {
+    --color-primary: #5a3820; /* dark brown */
+    --color-secondary: #f7f4ee; /* very light beige background */
+    --color-accent: #a37c5d; /* soft brown accent */
+    --color-text: #3b2a1d; /* dark text for contrast */
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Containers keep content centered and consistent */
+.container {
+    width: 90%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Header styling */
+.header {
+    background-color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-accent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 64px;
+    width: auto;
+    display: block;
+}
+
+.nav a {
+    margin-left: 1rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Hero section styling */
+.hero {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 4rem 0;
+}
+.hero h1 {
+    margin: 0 0 1rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Section styling */
+.section {
+    background-color: var(--color-secondary);
+    padding: 3rem 0;
+}
+.section-alt {
+    background-color: #f1ebe3; /* slightly darker beige for alternating sections */
+}
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+.section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.services-list, .contact-list {
+    list-style: none;
+    padding-left: 0;
+}
+.services-list li, .contact-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.services-list li::before, .contact-list li::before {
+    content: '\2022'; /* bullet symbol */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Footer styling */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+.footer a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav {
+        margin-top: 0.5rem;
+    }
+    .nav a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
